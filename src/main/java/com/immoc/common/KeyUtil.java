@@ -1,5 +1,6 @@
 package com.immoc.common;
 
+import java.math.BigDecimal;
 import java.util.Random;
 
 /**
@@ -19,5 +20,11 @@ public class KeyUtil {
         Random random = new Random();
         Integer num = random.nextInt(900000) + 100000;
         return System.currentTimeMillis() + String.valueOf(num);
+    }
+
+    public static void main(String[] args) {
+
+        System.out.println(BigDecimal.ZERO.compareTo(BigDecimal.ZERO));
+
     }
 }

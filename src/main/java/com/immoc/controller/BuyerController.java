@@ -44,7 +44,7 @@ public class BuyerController {
         //2.查询类目（一次性查询）
         List<Integer> categoryTypeList = productInfos
                 .stream()
-                .map(e -> e.getCategoryType())
+                .map(ProductInfo::getCategoryType)
                 .collect(Collectors.toList());
         List<ProductCategory> categories = categoryService.findByCategoryTypeIn(categoryTypeList);
 

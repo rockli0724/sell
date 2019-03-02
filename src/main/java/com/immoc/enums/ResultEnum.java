@@ -1,17 +1,12 @@
 package com.immoc.enums;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-
 /**
  * @author lilin
  * @Title: ResultEnum
  * @date 2018/10/21上午11:38
  */
-@Getter
-@AllArgsConstructor
-public enum ResultEnum {
-    PARAM_ERROR(1, "参数不正确"),
+public enum ResultEnum implements IEcode {
+    PARAM_ERROR(2, "参数不正确"),
     PRODUCT_NOT_EXIST(10, "商品不存在"),
     PRODUCT_STOCK_ERROR(11, "库存不正确"),
     ORDER_DETAIL_NOT_EXIST(12, "订单详细不存在"),
@@ -25,6 +20,21 @@ public enum ResultEnum {
     ////
     ;
 
-    private Integer code;
-    private String msg;
+    private final Integer code;
+    private final String msg;
+
+    ResultEnum(Integer code, String msg) {
+        this.code = code;
+        this.msg = msg;
+    }
+
+    @Override
+    public Integer getCode() {
+        return code;
+    }
+
+    @Override
+    public String getMsg() {
+        return msg;
+    }
 }
