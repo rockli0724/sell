@@ -31,8 +31,4 @@ public class SellExcepiton extends RuntimeException {
         return code;
     }
 
-    public SellExcepiton setCode(Integer code) {
-        this.code = code;
-        return this;
-    }
 }
